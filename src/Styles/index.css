@@ -1,0 +1,17 @@
+body {
+  background-color: #C4BAAB;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  color: white;
+}
+
+#root {
+  display: grid;
+  margin: 0 200px;
+  position: relative;
+  min-height: 100vh;
+  
+}
+
+

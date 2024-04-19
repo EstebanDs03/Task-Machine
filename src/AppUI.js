@@ -1,3 +1,5 @@
+// Importa los componentes necesarios de otros archivos del proyecto.
+import React from "react";
 import { TodoCounter } from "./Components/TodoCounter";
 import { TodoSearch } from "./Components/TodoSearch";
 import { TodoList } from "./Components/TodoList";
@@ -7,11 +9,12 @@ import { EmptyTodos } from "./Components/EmptyTodos";
 import { TodosError } from "./Components/TodosError";
 import { TodosLoading } from "./Components/TodosLoading";
 import { Todocontext } from "./Context/TodoContex";
-import React from "react";
 import { Modal } from "./Components/Modal";
 import { TodoForm } from "./Components/TodoForm";
 
+// Definición del componente AppUI.
 function AppUI() {
+  // Extrae los valores necesarios del contexto Todocontext usando el hook useContext de React.
   const {
     loading,
     error,
@@ -21,13 +24,18 @@ function AppUI() {
     openModal,
     setOpenModal,
   } = React.useContext(Todocontext);
-  
+
+  // Renderiza los elementos de la interfaz de usuario.
   return (
     <>
+      {/* Componente para contar el número de tareas */}
       <TodoCounter />
+      {/* Componente para buscar tareas */}
       <TodoSearch />
 
+      {/* Lista de tareas */}
       <TodoList>
+        {/* Renderiza indicadores de carga si loading es true */}
         {loading && (
           <>
             <TodosLoading />
@@ -35,10 +43,13 @@ function AppUI() {
             <TodosLoading />
           </>
         )}
-        {error && <TodosError/>}
-        {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
+        {/* Renderiza el componente de error si error es true */}
+        {error && <TodosError />}
+        {/* Renderiza un mensaje si no hay tareas y no está cargando */}
+        {!loading && searchedTodos.length === 0 && <EmptyTodos />}
 
-        {searchedTodos.map(todo => (
+        {/* Renderiza cada tarea */}
+        {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -48,11 +59,11 @@ function AppUI() {
           />
         ))}
       </TodoList>
-      
-      <CreateTodoButton
-        setOpenModal={setOpenModal}
-      />
 
+      {/* Botón para crear una nueva tarea */}
+      <CreateTodoButton setOpenModal={setOpenModal} />
+
+      {/* Renderiza el modal si openModal es true */}
       {openModal && (
         <Modal>
           <TodoForm />
@@ -62,4 +73,5 @@ function AppUI() {
   );
 }
 
+// Exporta el componente AppUI para que pueda ser utilizado en otros archivos.
 export { AppUI };
