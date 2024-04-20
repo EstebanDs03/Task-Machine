@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Task-Machine/static/css/main.eb8e646c.css",
+    "main.js": "/Task-Machine/static/js/main.0b18d499.js",
+    "index.html": "/Task-Machine/index.html",
+    "static/media/DeleteIcon.svg": "/Task-Machine/static/media/DeleteIcon.67697f56fd2f149bc9515a879062ad5c.svg",
+    "static/media/CompleteIcon.svg": "/Task-Machine/static/media/CompleteIcon.23109d14544b9bb9b3d5d4e65ea13701.svg",
+    "main.eb8e646c.css.map": "/Task-Machine/static/css/main.eb8e646c.css.map",
+    "main.0b18d499.js.map": "/Task-Machine/static/js/main.0b18d499.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb8e646c.css",
+    "static/js/main.0b18d499.js"
+  ]
+}
